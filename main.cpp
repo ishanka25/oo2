@@ -20,7 +20,7 @@ int main()
   Package pack1, pack2;
 
   // Add products to the packages - pack2 contains pack1 
-
+  cout << " ----\n ";
   pack1.addProduct(&carrot);
   pack1.addProduct(&peas);
   pack1.addProduct(&mushyPeas);
