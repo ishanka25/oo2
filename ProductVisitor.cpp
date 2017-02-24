@@ -37,13 +37,23 @@ void ProductVisitor::visit(Package *p)
 // Visit Method for the CheapestVisitor class on CannedItem class
 
 void CheapestVisitor::visit(CannedItem *p)
-{
+{ 
+  if (currentMinPrice == -1) { 
+    this->currentMinPrice = p->getPrice();
+  } else if (p->getPrice() < currentMinPrice) {
+    this->currentMinPrice = p->getPrice();
+  }
   // .. TO BE COMPLETED
 }
 
 // Visit Method for the CheapestVisitor class on FreshVegetable class
 void CheapestVisitor::visit(FreshVegetable *p)
-{
+{ 
+  if (currentMinPrice == -1) { 
+    this->currentMinPrice = p->getPrice();
+  } else if (p->getPrice() < currentMinPrice) {
+    this->currentMinPrice = p->getPrice();
+  }
   // .. TO BE COMPLETED
   // return this;
 }
@@ -69,7 +79,7 @@ void ReducePriceVisitor::visit(CannedItem *p)
 // CheapestVisitor Method to return the price of the cheapest item
 double CheapestVisitor::getMinPrice()
 {
-  // .. TO BE COMPLETED
+  return this->currentMinPrice;
 }
 
 // CheapestVisitor Method to return the cheapest Item
@@ -83,7 +93,7 @@ Item *CheapestVisitor::getMinItem()
 
 void CheapestVisitor::reset()
 {
-  // .. TO BE COMPLETED
+  this->currentMinPrice = -1;
 };
 
 

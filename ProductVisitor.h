@@ -28,6 +28,7 @@ class CheapestVisitor : public ProductVisitor
   void visit(FreshVegetable *p);
   void visit(CannedItem *p);
  private:
+   double currentMinPrice = -1;
     // .. TO BE COMPLETED
   
 };
