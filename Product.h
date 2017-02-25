@@ -2,6 +2,7 @@
 #define _PRODUCT_H
 #include <iostream>
 #include <vector>
+#include <cstring>
 using namespace std;
 
 const int MAX_NAME_LEN = 200;
