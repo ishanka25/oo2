@@ -22,6 +22,7 @@ class CheapestVisitor : public ProductVisitor
  public:
   // .. TO BE COMPLETED  
 
+  Item *minItem;
   double getMinPrice();
   Item *getMinItem();
   void reset();

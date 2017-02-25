@@ -40,8 +40,10 @@ void CheapestVisitor::visit(CannedItem *p)
 { 
   if (currentMinPrice == -1) { 
     this->currentMinPrice = p->getPrice();
+    this->minItem = p;
   } else if (p->getPrice() < currentMinPrice) {
     this->currentMinPrice = p->getPrice();
+    this->minItem = p;
   }
   // .. TO BE COMPLETED
 }
@@ -51,11 +53,12 @@ void CheapestVisitor::visit(FreshVegetable *p)
 { 
   if (currentMinPrice == -1) { 
     this->currentMinPrice = p->getPrice();
+    this->minItem = p;
   } else if (p->getPrice() < currentMinPrice) {
     this->currentMinPrice = p->getPrice();
+    this->minItem = p;
   }
-  // .. TO BE COMPLETED
-  // return this;
+  // .. TO BE COMPLETED (Done)
 }
 
 ReducePriceVisitor::ReducePriceVisitor(double a, double b) {
@@ -86,6 +89,7 @@ double CheapestVisitor::getMinPrice()
 
 Item *CheapestVisitor::getMinItem()
 {
+  return this->minItem;
   // .. TO BE COMPLETED
 }
 
