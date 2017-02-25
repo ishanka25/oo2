@@ -21,15 +21,15 @@ class CheapestVisitor : public ProductVisitor
 {
  public:
   // .. TO BE COMPLETED  
-
-  Item *minItem;
   double getMinPrice();
   Item *getMinItem();
   void reset();
   void visit(FreshVegetable *p);
   void visit(CannedItem *p);
+  void setMinItem(Item *p);
  private:
    double currentMinPrice = -1;
+   Item *minItem;
     // .. TO BE COMPLETED
   
 };

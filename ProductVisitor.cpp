@@ -30,14 +30,11 @@ void ProductVisitor::visit(Package *p)
   {
     p->getProduct(i)->accept(this);
   }
-  // .. TO BE COMPLETED
+  // .. TO BE COMPLETED (Done)
 }
 
-
-// Visit Method for the CheapestVisitor class on CannedItem class
-
-void CheapestVisitor::visit(CannedItem *p)
-{ 
+// Sets the min item.
+void CheapestVisitor::setMinItem(Item *p) {
   if (currentMinPrice == -1) { 
     this->currentMinPrice = p->getPrice();
     this->minItem = p;
@@ -45,19 +42,19 @@ void CheapestVisitor::visit(CannedItem *p)
     this->currentMinPrice = p->getPrice();
     this->minItem = p;
   }
-  // .. TO BE COMPLETED
+}
+
+// Visit Method for the CheapestVisitor class on CannedItem class
+void CheapestVisitor::visit(CannedItem *p)
+{ 
+  this->setMinItem(p);
+  // .. TO BE COMPLETED (Done)
 }
 
 // Visit Method for the CheapestVisitor class on FreshVegetable class
 void CheapestVisitor::visit(FreshVegetable *p)
 { 
-  if (currentMinPrice == -1) { 
-    this->currentMinPrice = p->getPrice();
-    this->minItem = p;
-  } else if (p->getPrice() < currentMinPrice) {
-    this->currentMinPrice = p->getPrice();
-    this->minItem = p;
-  }
+  this->setMinItem(p);
   // .. TO BE COMPLETED (Done)
 }
 
@@ -90,7 +87,7 @@ double CheapestVisitor::getMinPrice()
 Item *CheapestVisitor::getMinItem()
 {
   return this->minItem;
-  // .. TO BE COMPLETED
+  // .. TO BE COMPLETED (Done)
 }
 
 // CheapestVisitor Method to reset before finding the minimum item
