@@ -41,8 +41,10 @@ class ReducePriceVisitor : public ProductVisitor
   // .. TO BE COMPLETED
   void visit(FreshVegetable *p);
   void visit(CannedItem *p);
-  
+  void reducePrice(Item *p,double percetage);
  private:
+	double pFreshVeg;
+	double pCanned;
   // .. TO BE COMPLETED
 };
 #endif
