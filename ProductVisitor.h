@@ -20,7 +20,7 @@ class ProductVisitor
 class CheapestVisitor : public ProductVisitor
 {
  public:
-  // .. TO BE COMPLETED  
+  // .. TO BE COMPLETED  (Done)  
   double getMinPrice();
   Item *getMinItem();
   void reset();
@@ -30,7 +30,7 @@ class CheapestVisitor : public ProductVisitor
  private:
    double currentMinPrice = -1;
    Item *minItem;
-    // .. TO BE COMPLETED
+    // .. TO BE COMPLETED (Done)
   
 };
 
@@ -38,14 +38,14 @@ class ReducePriceVisitor : public ProductVisitor
 {
  public:
   ReducePriceVisitor(double a, double b);
-  // .. TO BE COMPLETED
+  // .. TO BE COMPLETED (Done)
   void visit(FreshVegetable *p);
   void visit(CannedItem *p);
   void reducePrice(Item *p,double percetage);
  private:
 	double pFreshVeg;
 	double pCanned;
-  // .. TO BE COMPLETED
+  // .. TO BE COMPLETED (Done)
 };
 #endif
 

@@ -72,7 +72,7 @@ void ReducePriceVisitor::reducePrice(Item *p,double percentage) {
 void ReducePriceVisitor::visit(FreshVegetable *p)
 {
 	this->reducePrice(p,this->pFreshVeg);
-  // .. TO BE COMPLETED
+  // .. TO BE COMPLETED (Done)
 }
 
 // Visit Method for ReducePriceVisitor class on CannedItem class
@@ -80,7 +80,7 @@ void ReducePriceVisitor::visit(FreshVegetable *p)
 void ReducePriceVisitor::visit(CannedItem *p)
 {
 	this->reducePrice(p,this->pCanned);
-  // .. TO BE COMPLETED
+  // .. TO BE COMPLETED (Done)
 }
 
 // CheapestVisitor Method to return the price of the cheapest item
