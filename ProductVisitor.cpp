@@ -25,7 +25,6 @@ void Package::accept(ProductVisitor *v)
 // Visit method for ProductVisitor class on Package class
 void ProductVisitor::visit(Package *p)
 {
-  // cout << v;
   for (int i = 0; i < p->size(); i++)
   {
     p->getProduct(i)->accept(this);
@@ -90,7 +89,8 @@ double CheapestVisitor::getMinPrice()
 }
 
 // CheapestVisitor Method to return the cheapest Item
-
+// If more than one item is equally cheap, 
+// this returns the first item which was cheap.
 Item *CheapestVisitor::getMinItem()
 {
   return this->minItem;
